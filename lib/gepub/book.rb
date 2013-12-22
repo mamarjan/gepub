@@ -340,6 +340,7 @@ EOF
           files[entry.name] = zis.read
           case entry.name
           when MIMETYPE then
+            files[MIMETYPE].strip!
             if files[MIMETYPE] != MIMETYPE_CONTENTS
               warn "#{MIMETYPE} is not valid: should be #{MIMETYPE_CONTENTS} but was #{files[MIMETYPE]}"
             end
